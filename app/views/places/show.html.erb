@@ -1,0 +1,32 @@
+<% provide :title, "Place: #{@place.name}" %>
+
+<div class="large-8 large-centered column">
+<h1><%= @place.name %>
+<span id="checkin"> <%= link_to "Check-in", new_place_checkin_path(@place)%></span></h1>
+<h5>Descrizione:</h5>
+<h6><%= @place.description %></h6>
+<%= gmaps({
+                  "map_options" => {"auto_adjust" => true, "auto_zoom" => false, "zoom" => 15 },
+                  "markers"     => {"data" => @json }
+          }) %>
+
+
+  <fieldset id="recensioni">
+    <legend>Recensioni</legend>
+<% @place.reviews.each do |review| %>
+      <div class="panel"><p>
+      <%= link_to review.user.name, user_path(review.user.name) %>
+      dice:
+      <%= review.body %> <span class="timestamp">
+    Posted <%= time_ago_in_words(review.created_at) %> ago.
+  </span></p></div>
+<% end %> </fieldset>
+ <fieldset>
+<legend>Add a review:</legend>
+<%= form_for([@place, @place.reviews.build]) do |f| %>
+
+      <%= f.text_area :body %>
+    <%= f.submit "Invia recensione", class:"small primary round button" %>
+      </fieldset>
+<% end %>
+</div>

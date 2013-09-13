@@ -1,0 +1,19 @@
+
+
+  <div class="row">
+    <div class="small-8 small-centered columns">
+      <%= render 'shared/error_messages_pet' %>
+    <h1>Crea il profilo al tuo animale</h1>
+    </div>
+    <div class="small-6 small-centered columns">
+
+      <fieldset>
+        <legend>Dati animale</legend>
+        <%= form_for(@pet) do |f| %>
+
+            <%= render 'fields', f: f %>
+            </fieldset>
+            <%= f.submit 'Create my animal profile', class: 'small round primary button' %>
+            </div>
+        <% end %>
+        </div>

@@ -1,0 +1,24 @@
+This README file introduces ours application and point to useful places in the API for learning more.
+
+========================================PetSquare========================================
+PetSquare is a social network designed for dog owners.
+Main interactions developed: users follows pet
+                             search pet
+                             search place + check-in
+                             streamlife(only check-in) both user and his pet
+
+1. you can use rake "db:populate" if you want to populate only users and pets table
+        or only:
+                    "db:places"
+                    "db:relationships"
+                    "db:checkins"
+                    "db:reviews"
+
+2. We've used gem: faker, bcrypt-ruby, gmaps4rails, zurb-foundation(!notice: '4.2.1')
+
+2.a. asset:clean then asset:precompile
+
+3. Into application.html.erb there is commented debug-view
+
+
+

@@ -1,0 +1,19 @@
+<% provide(:title, "Sign in") %>
+
+<div class="row">
+  <div class="small-6 small-centered columns">
+    <h1>Sign in</h1>
+    <%= form_for(:session, url: sessions_path) do |f| %>
+
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+
+        <%= f.submit "Sign in", class: "small round primary button" %>
+    <% end %>
+
+    <p>Sei un nuovo utente? <%= link_to "Crea il tuo profilo!", signup_path %></p>
+  </div>
+</div>

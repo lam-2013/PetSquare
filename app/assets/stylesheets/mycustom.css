@@ -1,0 +1,133 @@
+.footer {
+    position: fixed;
+    background: #11564f ;
+    left: 0px;
+    bottom: 0px;
+    width:100%;
+    height: 20px;
+    /*padding: 24px 0 10px;*/
+}
+.footer p.copyright {
+    /*margin: 6px 0 0;*/
+    text-align: center;
+    font-size: 13px;
+    color: #c8e6e3; }
+
+.title-area{
+    padding-left: 50px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.top-bar-section{
+    padding-right: 20px;
+}
+.top-bar-section a:hover{
+    color: cadetblue;
+}
+
+.error{
+    color: red;
+}
+
+select {
+    padding:3px;
+    margin: 0;
+    -webkit-border-radius: 7px;
+    -moz-border-radius:7px;
+    border-radius:7px;
+    -webkit-box-shadow: 0 3px 0 #f4e3ed, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #f4e3ed, 0 -1px #fff inset;
+    box-shadow: 0 0px 0 #f4e3ed, 0 -1px #fff inset;
+    background: #c8e6e3;
+    color:#004d6c;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+
+h1{
+  text-shadow: 3px 3px 3px #c8e6e3;
+}
+
+#popolarita {
+    font-style: oblique;
+}
+
+fieldset{
+    border-radius: 7px;
+    color: #004d6c ;
+    background-color: #f2f2f2;
+}
+
+textarea{
+    border-radius: 7px;
+    border-style: ridge;
+}
+
+a{
+    color: #068478;
+}
+
+a:hover{
+    color: #2c7897;
+}
+
+.timestamp {
+    font-style: oblique;
+    color: #c8b4bf;
+    font-size: small;
+}
+
+.success {
+    color: #ff32a2;
+    text-align: center;
+    font-size: medium;
+}
+
+
+#recensioni{
+    background-color: transparent;
+}
+
+.show {
+    border:1px #2b2b2b;
+    border-radius:25px;
+    padding: 4px;
+    background-color: #2b2b2b ;
+}
+
+.show:hover {
+    padding:5px;
+    background-color: #c3c3c3;
+}
+
+#checkin{
+    text-shadow: 0 1px 0 #ccc,
+    0 2px 0  #c8e6e3,
+    0 3px 0 #b2cdca,
+    0 4px 0 #a5b9b6,
+    0 5px 0 #879693,
+    0 6px 1px rgba(178, 205, 202, 0.9),
+    0 0 5px rgba(178, 205, 202, 0.54),
+    0 1px 3px rgba(135, 150, 147, 0.29),
+    0 3px 5px rgba(135, 150, 147, 0.46),
+    0 5px 10px rgba(152, 176, 173, 0.49),
+    0 10px 10px rgba(178, 205, 202, 0.20),
+    0 20px 20px rgba(178, 205, 202, 0.58);
+}

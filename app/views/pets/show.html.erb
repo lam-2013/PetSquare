@@ -1,0 +1,38 @@
+<% provide :title, "Animal #{@pet.namePet}" %>
+<div class="row">
+  <div class="large-6 columns">
+    <canvas id="photopet" width="400" height="400" style="border:1px solid black"></canvas>
+  </div>
+
+  <div class="large-6 columns">
+    <div class="panel">
+      <h1><%= @pet.namePet %></h1>
+      <h5><%= @pet.breed %></h5>
+
+      <h5 class="subheader"> di <%= link_to @pet.user.name, user_path(@pet.user.id) %></h5>
+      <h4 id="popolarita">popolarità <%= Pet.actual_popularity(@pet) %> %</h4>
+      <hr/>
+      <div class="row">
+        <div class="large-6 columns">
+          <%= render 'stats' %></div>
+        <%= render 'follow_form' if signed_in? %>
+      </div>
+    </div>
+    <fieldset>
+      <legend>
+        Descrizione
+      </legend>
+      <%= @pet.description %>
+    </fieldset>
+
+  </div>
+</div>
+<br/>
+<div class="row">
+  <% if @pet.checkins.any? %>
+      <h3>Check-in: (<%= @pet.checkins.count %> effetuati)</h3>
+      <ol class="checkin">
+        <%= render @checkins.first(10) %>
+      </ol>
+  <% end %>
+</div>

@@ -1,0 +1,38 @@
+<% provide :title, @user.name %>
+
+<div class="row">
+  <h6>Vi presento i miei animali</h6>
+  <div class="large-6 columns">
+
+    <canvas id="showmypet" width="400" height="400" style="border:1px solid black"></canvas>
+  </div>
+  <div class="large-6 columns">
+    <div class="panel">
+      <h1><%= gravatar_for @user %>
+      <%= @user.name %></h1>
+      <hr/>
+      <div class="row">
+        <div class="large-12 columns">
+          <% if @user.pets.any? %>
+                <%= link_to "Visualizza i miei animali (#{@user.pets.count})", pets_user_path(@user)%>
+          <% else %>
+              <% if @user == current_user %>
+                    <h5>Non hai nessun animale</h5>
+              <%= link_to "crea il profilo al tuo animale", addPet_path %>
+              <% else %>
+                    <h5>Non possiede nessun animale</h5>
+              <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <% if @user.checkins.any? %>
+      <h3>Check-in: (<%= @user.checkins.count %> effetuati)</h3>
+      <ol class="checkin">
+        <%= render @checkins%>
+      </ol>
+  <% end %>
+</div>

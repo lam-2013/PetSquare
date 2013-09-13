@@ -1,0 +1,22 @@
+<% provide :title, 'Search results places' %>
+  <h1>Risultati ricerca:</h1>
+  <% unless @places.empty? %>
+      <div class="row">
+      <div class="large-9 column">
+      <%= gmaps4rails(@json) %> </div>
+        <div class="large-3 column">
+          <div class="panel">
+        <% @places.first(10).each do |place| %>
+            <li>
+              <span class="show"> <%= link_to 'Mostra', place_path(place) %></span>
+                <%= place.name %>
+
+            </li><br/>
+        <% end %>
+       </div>
+      </div></div>
+  <% else %>
+      <p>Nessun posto trovato</p>
+  <% end %>
+
+  <h4>Non hai trovato il posto che cercavi?<%= link_to "Crealo", addPlace_path %> </h4>

@@ -1,0 +1,11 @@
+<% provide(:title, "Edit your pet") %>
+<h1>Modifica il profilo del tuo</h1>
+
+<div class="row">
+  <div class="small-6 small-centered columns">
+<%= form_for(@pet) do |f| %>
+    <%= render 'fields', f: f %>
+<%= f.submit 'Save changes', class: 'small round primary button' %>
+<% end %>
+   </div>
+</div>

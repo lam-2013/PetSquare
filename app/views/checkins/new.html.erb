@@ -1,0 +1,18 @@
+
+<div class="row">
+  <div class="large-4 large-centered columns">
+    <h1>Check-in</h1>
+    <%= form_for(:checkin, url: {action: "create"})  do |f| %>
+        <legend>Selezione con quale animale sei:</legend>
+        <% pets_array = current_user.pets { |pet| [pet.name, pet.id] } %>
+        <%= f.select :pet_id, options_from_collection_for_select(current_user.pets,
+                                                               "id", "namePet" )%>
+        <br/>
+        <legend>Cosa stai facendo</legend>
+        <%= f.text_area :wayd%>
+
+        <%= f.submit 'Checkin', class: 'round primary small button' %>
+    <% end %>
+  </div>
+</div>
+

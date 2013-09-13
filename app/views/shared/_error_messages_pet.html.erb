@@ -1,0 +1,12 @@
+<% if @pet.errors.any? %>
+    <div class="large-6 large-centered columns">
+      <div class="error">
+        The form contains <%= pluralize(@pet.errors.count, "error") %>.
+      <ul>
+        <% @pet.errors.full_messages.each do |msg| %>
+            <li>* <%= msg %></li>
+        <% end %>
+      </ul>
+      </div>
+      </div>
+<% end %>

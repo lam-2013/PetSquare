@@ -1,0 +1,12 @@
+<% provide :title, 'Search results' %>
+<div class="large-6 large-centered column">
+  <% unless @pets.nil? %>
+      <h1>Risultati ricerca:</h1>
+      <div class="panel">
+        <ul>
+          <%= render @pets %>
+        </ul></div>
+  <% else %>
+      <p>nessun tipo di animale trovato</p>
+  <% end %>
+</div>

@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="large-6 large-centered columns">
+    <br/>
+    <%= button_to "Crea il profilo di un altro animale", addPet_path, class:'medium round primary button' %>
+    <fieldset>
+      <legend>I miei animali</legend>
+      <% @pets.each do |pet| %>
+          <li>
+            <tr>
+              <td><%= pet.namePet %></td>
+              <td><%= link_to 'Show', pet_path(pet), class:'show' %></td>
+              <td><% if current_user.admin? || current_user?(pet.user) %>
+                  <td><%= link_to 'Edit', edit_pet_path(pet), class:'show' %></td>
+                  | <%= link_to 'Delete', pet, method: :delete, data: { confirm: 'Are you sure?' }, class:'show' %> </td>
+                  <% end %>
+            </tr>
+          </li>
+          <br/>
+      <% end %>
+    </fieldset>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+
+    <div class="large-6 large-centered column">
+      <h1>Gli animali che mi piacciono:</h1>
+      <% if @pets.any? %>
+          <div class="panel">
+            <ul>
+              <%= render @pets %>
+            </ul>
+          </div>
+      <% else %>
+          <p>non ti piace nessun animale allora</p>
+          <%= link_to "cercalo",  searchPet_path, class:"show" %>
+      <% end %>
+    </div>
